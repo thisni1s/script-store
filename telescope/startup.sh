@@ -22,7 +22,6 @@ wget https://raw.githubusercontent.com/thisni1s/script-store/raw/refs/heads/main
 wget https://raw.githubusercontent.com/thisni1s/script-store/raw/refs/heads/main/telescope/corsaro.service -O /etc/corsaro.service
 iface=$(ip route show default | awk '{print $5}')
 sed -i "s/##IFACE##/$iface/g" /etc/corsaro.conf
-sed -i "s/##MONITORID##/$7/g" /etc/corsaro.conf
 systemctl enable --now corsaro
 
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/webhook.service -P /usr/lib/systemd/system

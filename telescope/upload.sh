@@ -19,8 +19,9 @@ for file in *.done; do
     year=$(date -u -d @"$timestamp" +"%Y")
     month=$(date -u -d @"$timestamp" +"%m")
     day=$(date -u -d @"$timestamp" +"%d")
+    hour=$(date -u -d @"$timestamp" +"%H")
 
-    target="tupload/${bucket}/provider=${provider}/region=${region}/ip=${ip}/year=${year}/month=${month}/day=${day}"
+    target="tupload/${bucket}/provider=${provider}/region=${region}/ip=${ip}/year=${year}/month=${month}/day=${day}/hour=${hour}"
 
     if mc cp "${file%.*}" "$target/"; then
         rm "$file" "${file%.*}"

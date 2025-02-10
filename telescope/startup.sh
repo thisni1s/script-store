@@ -19,10 +19,10 @@ apt upgrade -y
 curl https://pkg.caida.org/os/ubuntu/bootstrap.sh | bash
 sudo apt install -y corsaro
 wget https://raw.githubusercontent.com/thisni1s/script-store/refs/heads/main/telescope/corsaro.conf -O /etc/corsaro.conf
-wget https://raw.githubusercontent.com/thisni1s/script-store/refs/heads/main/telescope/corsaro.service -O /etc/corsaro.service
+wget https://raw.githubusercontent.com/thisni1s/script-store/refs/heads/main/telescope/corsaro.service -P /usr/lib/systemd/system
 iface=$(ip route show default | awk '{print $5}')
 sed -i "s/##IFACE##/$iface/g" /etc/corsaro.conf
-systemctl enable --now corsaro
+systemctl enable corsaro
 
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/webhook.service -P /usr/lib/systemd/system
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/webhook.socket -P /usr/lib/systemd/system

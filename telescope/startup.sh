@@ -13,7 +13,7 @@ openssl req -x509 -newkey ed25519 -keyout /root/config/key.key -outform PEM -out
 
 export DEBIAN_FRONTEND=noninteractive
 apt update -y
-apt upgrade -y
+#apt upgrade -y
 
 # Install Corsaro
 curl https://pkg.caida.org/os/ubuntu/bootstrap.sh | bash

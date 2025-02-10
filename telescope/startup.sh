@@ -18,8 +18,8 @@ apt upgrade -y
 # Install Corsaro
 curl https://pkg.caida.org/os/ubuntu/bootstrap.sh | bash
 sudo apt install -y corsaro
-wget https://raw.githubusercontent.com/thisni1s/script-store/raw/refs/heads/main/telescope/corsaro.conf -O /etc/corsaro.conf
-wget https://raw.githubusercontent.com/thisni1s/script-store/raw/refs/heads/main/telescope/corsaro.service -O /etc/corsaro.service
+wget https://raw.githubusercontent.com/thisni1s/script-store/refs/heads/main/telescope/corsaro.conf -O /etc/corsaro.conf
+wget https://raw.githubusercontent.com/thisni1s/script-store/refs/heads/main/telescope/corsaro.service -O /etc/corsaro.service
 iface=$(ip route show default | awk '{print $5}')
 sed -i "s/##IFACE##/$iface/g" /etc/corsaro.conf
 systemctl enable --now corsaro
@@ -28,7 +28,7 @@ wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telesc
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/webhook.socket -P /usr/lib/systemd/system
 
 mkdir -p /var/scripts
-wget https://raw.githubusercontent.com/thisni1s/script-store/raw/refs/heads/main/telescope/upload.sh -O /var/scripts/upload.sh
+wget https://raw.githubusercontent.com/thisni1s/script-store/refs/heads/main/telescope/upload.sh -O /var/scripts/upload.sh
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/teardown.sh -P /var/scripts/
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/ping.sh -P /var/scripts/
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/restart.sh -P /var/scripts/

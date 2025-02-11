@@ -96,9 +96,9 @@ ip=$( echo $ip4 | sed -r 's/\./-/g' )
 mc cp /root/config/$desc tupload/$(cat /root/config/bucket.txt)/descriptors/$ip/$desc
 
 # Fix nameservers to do ipv6
-sudo systemctl stop systemd-resolved
-sudo systemctl disable systemd-resolved
-sudo rm /etc/resolv.conf
+systemctl stop systemd-resolved
+systemctl disable systemd-resolved
+rm /etc/resolv.conf
 echo "nameserver 2001:4860:4860::8888" > /etc/resolv.conf
 
 

@@ -1,0 +1,9 @@
+[Unit]
+Description=Webhook server socket
+
+[Socket]
+BindIPv6Only=ipv6-only
+ListenStream=51337
+
+[Install]
+WantedBy=multi-user.target

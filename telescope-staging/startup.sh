@@ -40,13 +40,13 @@ wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telesc
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/webhook.socket -O /usr/lib/systemd/system/webhook.socket
 
 mkdir -p /var/scripts
-wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/upload.sh -O /var/scripts/upload.sh
+wget https://raw.githubusercontent.com/thisni1s/script-store/refs/heads/main/telescope-staging/upload.sh -O /var/scripts/upload.sh
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/teardown.sh -O /var/scripts/teardown.sh
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/ping.sh -O /var/scripts/ping.sh
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/restart.sh -O /var/scripts/restart.sh
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/status.sh -O /var/scripts/status.sh
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/redeploy.sh -O /var/scripts/redeploy.sh
-wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/rewrite.sh -O /var/scripts/rewrite.sh
+wget https://raw.githubusercontent.com/thisni1s/script-store/refs/heads/main/telescope-staging/services/rewrite.sh -O /var/scripts/rewrite.sh
 chmod +x /var/scripts/*
 
 wget https://raw.githubusercontent.com/thisni1s/telescope/refs/heads/main/telescope/assets/services/webhook.json -O /etc/webhook.json
